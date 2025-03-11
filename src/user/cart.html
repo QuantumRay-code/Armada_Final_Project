@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Cart</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-light">
+    <main class="container py-4">
+
+        <section class="d-flex justify-content-between align-items-center mb-4">
+            <section class="d-flex align-items-center gap-2">
+                <img src="logo.svg" alt="Store logo" class="rounded" style="width: 32px; height: 32px;">
+                <img src="Vector.png" alt="Vector" class="rounded" style="width: 24px; height: 24px;">
+                <h1 class="h5 mb-0 text-secondary">Let's order fresh items for you.</h1>
+            </section>
+            <img src="profile.jpg" alt="Profile" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;">
+        </section>
+
+        <header>
+            <nav class="navbar bg-white rounded p-3 mb-4">
+                <section class="container-fluid">
+                    <section class="d-flex w-100 gap-3">
+                        <input class="form-control" type="search" placeholder="Search Products">
+                        <button class="btn btn-primary">Cart (0)</button>
+                    </section>
+                </section>
+            </nav>
+        </header>
+
+        <section class="row g-4">
+            <article class="col-md-7">
+
+                <article class="card mb-3">
+                    <section class="card-body d-flex align-items-center gap-3">
+                        <img src="image1.jpg" alt="Mixed salad dish" class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                        <section class="d-flex justify-content-between align-items-center flex-grow-1">
+                            <header>
+                                <p class="text-muted mb-1">Vegetables</p>
+                                <h5 class="card-title mb-0">$10</h5>
+                            </header>
+                            <section class="input-group" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="number" class="form-control text-center" value="1" min="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+
+                <article class="card mb-3">
+                    <section class="card-body d-flex align-items-center gap-3">
+                        <img src="image2.jpg" alt="Vegetable flatbread" class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                        <section class="d-flex justify-content-between align-items-center flex-grow-1">
+                            <header>
+                                <p class="text-muted mb-1">Vegetables</p>
+                                <h5 class="card-title mb-0">$10</h5>
+                            </header>
+                            <section class="input-group" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="number" class="form-control text-center" value="1" min="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+
+    
+                <article class="card mb-3">
+                    <section class="card-body d-flex align-items-center gap-3">
+                        <img src="image3.jpg" alt="Fresh vegetable salad" class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                        <section class="d-flex justify-content-between align-items-center flex-grow-1">
+                            <header>
+                                <p class="text-muted mb-1">Vegetables</p>
+                                <h5 class="card-title mb-0">$10</h5>
+                            </header>
+                            <section class="input-group" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="number" class="form-control text-center" value="1" min="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+
+        
+                <article class="card mb-3">
+                    <section class="card-body d-flex align-items-center gap-3">
+                        <img src="image4.jpg" alt="Vegetable burger" class="rounded" style="width: 80px; height: 80px; object-fit: cover;">
+                        <section class="d-flex justify-content-between align-items-center flex-grow-1">
+                            <header>
+                                <p class="text-muted mb-1">Vegetables</p>
+                                <h5 class="card-title mb-0">$10</h5>
+                            </header>
+                            <section class="input-group" style="width: 120px;">
+                                <button class="btn btn-outline-secondary" type="button">-</button>
+                                <input type="number" class="form-control text-center" value="1" min="1">
+                                <button class="btn btn-outline-secondary" type="button">+</button>
+                            </section>
+                        </section>
+                    </section>
+                </article>
+            </article>
+
+            <aside class="col-md-5">
+                <article class="card">
+                    <section class="card-body">
+                        <section class="mb-4">
+                            <h4 class="card-title mb-3">Shipping Information</h4>
+                            <section class="progress mb-4" style="height: 4px;">
+                                <section class="progress-bar" role="progressbar" style="width: 33%"></section>
+                            </section>
+                            <form>
+                                <section class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Address">
+                                </section>
+                                <section class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Address 2">
+                                </section>
+                                <section class="row g-3">
+                                    <section class="col-5">
+                                        <input type="text" class="form-control" placeholder="City">
+                                    </section>
+                                    <section class="col-4">
+                                        <input type="text" class="form-control" placeholder="State">
+                                    </section>
+                                    <section class="col-3">
+                                        <input type="text" class="form-control" placeholder="ZIP">
+                                    </section>
+                                </section>
+                            </form>
+                        </section>
+
+                        <section class="border-top pt-4">
+                            <h4 class="card-title mb-3">Order Summary</h4>
+                            <section class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Subtotal</span>
+                                <span>$40</span>
+                            </section>
+                            <section class="d-flex justify-content-between mb-3">
+                                <span class="text-muted">Shipping Fee</span>
+                                <span>$5</span>
+                            </section>
+                            <section class="d-flex justify-content-between border-top pt-3 mb-4">
+                                <strong>Total Amount</strong>
+                                <strong>$45</strong>
+                            </section>
+                            <button class="btn btn-primary w-100">Proceed to Checkout</button>
+                        </section>
+                    </section>
+                </article>
+            </aside>
+        </section>
+
+     
+        <nav class="position-fixed start-0 top-50 translate-middle-y ps-3">
+            <ul class="nav flex-column gap-4">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        <img src="home.svg" alt="Home" style="width: 24px; height: 24px;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="grid.svg" alt="Categories" style="width: 24px; height: 24px;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="list.svg" alt="Orders" style="width: 24px; height: 24px;">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <img src="settings.svg" alt="Settings" style="width: 24px; height: 24px;">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
