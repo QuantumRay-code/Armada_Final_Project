@@ -1,0 +1,462 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #F3F8FD;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 60px;
+    background: #E5EDF5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    gap: 30px; /* Adjust this to control the spacing between images */
+}
+
+/* Sidebar Buttons */
+.sidebar-button {
+    width: 40px;
+    height: 40px;
+    background: green;
+    border: none;
+    cursor: pointer;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+/* Navbar */
+.top-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f4f6fb; /* Light blue background */
+    padding: 20px 30px;
+    border-radius: 12px; /* Rounded edges */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Leaf Icon */
+.header-icon {
+    width: 30px; /* Adjust icon size */
+}
+
+/* Heading */
+.top-navbar h1 {
+    flex: 1; /* Takes available space */
+    font-size: 18px;
+    font-weight: 600;
+    color: #5c5e81; /* Light grayish-blue */
+    text-align: left;
+    margin-left: 10px; /* Spacing */
+}
+
+/* Profile Navigation */
+.profile-nav {
+    position: relative;
+}
+
+/* Profile Button */
+.profile-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 55px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    width: 140px;
+    padding: 10px;
+    list-style: none;
+    display: none;
+}
+
+/* Logout Button */
+.dropdown-menu li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+    transition: background 0.2s ease-in-out;
+}
+
+.dropdown-menu li a:hover {
+    background: #f3f3f3;
+}
+
+/* Logout Icon */
+.logout-icon {
+    width: 20px;
+    opacity: 0.6;
+}
+
+/* Show dropdown when active */
+.show {
+    display: block;
+}
+
+/* Search and Cart */
+.search-cart {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-left: 50px;
+    gap: 10px;
+}
+
+/* Search Box */
+.search-box {
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #D4E1EC;
+    width: 250px;
+    display: flex;
+    align-items: center;
+}
+
+/* Input Field */
+.search-box input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    color: #6B7280;
+    padding: 10px 35px 10px 10px;
+    border-radius: 8px;
+    outline: none;
+}
+
+/* Search Icon */
+.search-box img {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    right: 12px;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+/* Cart Button */
+.cart-button {
+    background: #A78BFA;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.cart-button::before {
+    content: "🛒";
+}
+
+/* Add spacing to move it away from the sidebar */
+.product-header {
+    margin-left: 20px; /* Adjust as needed */
+    padding: 10px 0;
+}
+
+/* Style the back link */
+.product-header .back-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #606060; /* Change text color */
+    font-size: 12px;
+    margin-left: 50px;
+}
+
+/* Product Details */
+/* Product Info Layout */
+.product-info {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 50px;
+    width: 1400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Gallery */
+.product-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.main-image {
+    width: 400px;
+    border-radius: 8px;
+}
+
+.thumbnail-gallery {
+    display: flex;
+    gap: 5px;
+}
+
+.thumbnail-gallery img {
+    width: 96px;
+    height: 96px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.thumbnail-gallery img:hover {
+    border-color: #A78BFA;
+}
+
+/* Product Details */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.product-details h2 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.rating {
+    color: #606060;
+    font-weight: bold;
+}
+
+.price-button {
+    background: #F1F1F1; /* Light background */
+    border: none;
+    border-radius: 18px;
+    padding: 8px 16px;
+    width: 80px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #6B7280; /* Text color */
+    cursor: pointer;
+}
+
+.description {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+}
+
+/* Purchase Section */
+.purchase {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: auto; /* Pushes it to the bottom */
+}
+
+/* Quantity Container */
+.quantity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+/* Wrapper to align box & buttons */
+.quantity-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between box and buttons */
+}
+
+/* Quantity Box */
+.quantity-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 50px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    background: #F8FAFC;
+}
+
+.quantity-box input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    outline: none;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Quantity Buttons (Outside on Right Side) */
+.quantity-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.qty-btn {
+    width: 40px;
+    height: 25px;
+    border: 1px solid #E0E0E0;
+    background: #F8FAFC;
+    font-size: 14px;
+    cursor: pointer;
+    color: #A78BFA;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.qty-btn:hover {
+    background: #A78BFA;
+    color: white;
+}
+
+/* Total Amount */
+.total-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.total {
+    background: #F3F4F6;
+    color: #A78BFA;
+    font-weight: bold;
+    font-size: 18px; /* Match quantity text */
+    width: 80px; /* Match .quantity-box */
+    height: 50px; /* Match .quantity-box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px; /* Match .quantity-box */
+    border: 1px solid #E0E0E0; /* Optional: Match the border */
+}
+
+/* Add to Cart Button */
+.add-to-cart {
+    background: transparent;
+    border: 2px solid #A78BFA;
+    color: #A78BFA;
+    border-radius: 12px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-to-cart:hover {
+    background: #A78BFA;
+    color: white;
+}
+
+
+/* Similar Products */
+.similar-products {
+    margin: 30px 50px;
+    padding: 20px;
+    background: #f8fbff; /* Light background */
+    border-radius: 10px;
+}
+
+.similar-products h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #7d8da1; /* Light gray text */
+    margin-bottom: 15px;
+}
+
+.similar-products ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.similar-products li {
+    background: white;
+    width: 260px;
+    height: 300px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.similar-products li:hover {
+    transform: translateY(5px);
+}
+
+.similar-products img {
+    width: 100%;
+    height: 210px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.similar-products p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.similar-products .price {
+    background: #eef3ff;
+    color: #5a78ff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 12px;
+    display: inline-block;
+}
