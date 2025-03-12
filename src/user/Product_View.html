@@ -4,31 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce UI</title>
-    <link rel="stylesheet" href="css/Product_View_styles.css">
+    <link rel="stylesheet" href="/css/Product_View_styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <aside class="sidebar">
-        <a href="#"><img src="Product_View_Assets/side nav logo.png" alt="Home" class="sidebar-icon"></a>
-        <a href="#"><img src="Product_View_Assets/side nav section.png" alt="Categories" class="sidebar-icon"></a>
+        <a href="#"><img src="/assets/logo.svg" alt="Home" class="sidebar-icon"></a>
+        <a href="#"><img src="/assets/dashboard_icon.svg" alt="Categories" class="sidebar-icon"></a>
     </aside>    
 
     <main>
         <header class="top-navbar">
-            <img src="Product_View_Assets/nav top logo.png" alt="Leaf Icon" class="header-icon">
+            <img src="/assets/header_icon.svg" alt="Leaf Icon" class="header-icon">
             <h1>Let's order fresh items for you.</h1>
 
             <nav class="profile-nav">
                 <button class="profile-button" onclick="toggleDropdown()">
-                    <img src="Product_View_Assets/profile.png" alt="User Profile" class="profile-picture">
+                    <img src="/assets/PV assets/profile.png" alt="User Profile" class="profile-picture">
                 </button>
                 <menu class="dropdown-menu" id="dropdown">
                     <li>
-                        <a href="/logout">
+                        <a href="/src/user/Landing_Page.html">
                             <span>Logout</span>
-                            <img src="Product_View_Assets/logout_icn.png" alt="Logout Icon" class="logout-icon">
+                            <img src="/assets/PV assets/logout_icn.png" alt="Logout Icon" class="logout-icon">
                         </a>
                     </li>
                 </menu>
@@ -51,12 +51,12 @@
 
         <section class="product-info">
             <section class="product-gallery">
-                <img src="Product_View_Assets/burgir.png" alt="Main Product" class="main-image">
+                <img src="/assets/PV assets/burgir.png" alt="Main Product" class="main-image">
                 <section class="thumbnail-gallery">
-                    <img src="Product_View_Assets/burgir small.png" alt="Thumbnail 1">
-                    <img src="Product_View_Assets/family_size.png" alt="Thumbnail 2">
-                    <img src="Product_View_Assets/combo 2.png" alt="Thumbnail 3">
-                    <img src="Product_View_Assets/breakfast.png" alt="Thumbnail 4">
+                    <img src="/assets/PV assets/burgir.png" alt="Thumbnail 1">
+                    <img src="/assets/PV assets/burgir small.png" alt="Thumbnail 2">
+                    <img src="/assets/PV assets/combo.png" alt="Thumbnail 3">
+                    <img src="/assets/PV assets/borgir.png" alt="Thumbnail 4">
                 </section>
             </section>
 
@@ -93,15 +93,15 @@
                         </div>
                     </div>
                 
-                    <div class="total-container">
+                    <section class="total-container">
                         <label>Total Amount</label>
                         <span class="total">$10</span>
-                    </div>
+                    </section>
                 
                     <button class="add-to-cart"> Add to Cart</button>
                     <section id="cart-modal" class="modal" aria-hidden="true" role="dialog">
                         <div class="modal-content">
-                            <img src="Product_View_Assets/modal_check.png" alt="Success" class="check-icon">
+                            <img src="/assets/PV assets/modal_check.png" alt="Success" class="check-icon">
                             <p>Added to cart successfully!</p>
                             <button class="close-btn" aria-label="Close">&times;</button>
                         </div>
@@ -116,7 +116,33 @@
             <h2>Similar Items</h2>
             <ul>
                 <li>
-                    <img src="Product_View_Assets/salad.png" alt="Similar Item">
+                    <img src="/assets/PV assets/salad.png" alt="Similar Item">
+                    <p>Salad</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
+                    <p class="price">$15</p>
+                </li>
+                <li>
+                    <img src="/assets/PV assets/juice.png" alt="Similar Item">
+                    <p>Beverages</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
+                    <p class="price">$6</p>
+                </li>
+                <li>
+                    <img src="/assets/PV assets/burgir.png" alt="Similar Item">
                     <p>Vegetables</p>
                     <p>
                         <i class="fas fa-star star-icon"></i>
@@ -129,57 +155,30 @@
                     <p class="price">$10</p>
                 </li>
                 <li>
-                    <img src="Product_View_Assets/juice.png" alt="Similar Item">
-                    <p>Vegetables</p>
+                    <img src="/assets/PV assets/pasta.png" alt="Similar Item">
+                    <p>Breakfast</p>
                     <p>
                         <i class="fas fa-star star-icon"></i>
                         <i class="fas fa-star star-icon"></i>
                         <i class="fas fa-star star-icon"></i>
                         <i class="fas fa-star star-icon"></i>
-                        <i class="far fa-star star-icon hollow-star"></i>
+                        <i class="fas fa-star star-icon"></i>
                         <span class="rating-text">36 Rating</span>
                       </p>
-                    <p class="price">$10</p>
+                    <p class="price">$13</p>
                 </li>
                 <li>
-                    <img src="Product_View_Assets/combo.png" alt="Similar Item">
-                    <p>Vegetables</p>
+                    <img src="/assets/PV assets/lunch.png" alt="Similar Item">
+                    <p>Lunch</p>
                     <p>
                         <i class="fas fa-star star-icon"></i>
                         <i class="fas fa-star star-icon"></i>
                         <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
                         <i class="far fa-star star-icon hollow-star"></i>
                         <span class="rating-text">36 Rating</span>
                       </p>
-                    <p class="price">$10</p>
-                </li>
-                <li>
-                    <img src="Product_View_Assets/pasta.png" alt="Similar Item">
-                    <p>Vegetables</p>
-                    <p>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="far fa-star star-icon hollow-star"></i>
-                        <span class="rating-text">36 Rating</span>
-                      </p>
-                    <p class="price">$10</p>
-                </li>
-                <li>
-                    <img src="Product_View_Assets/lunch.png" alt="Similar Item">
-                    <p>Vegetables</p>
-                    <p>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="fas fa-star star-icon"></i>
-                        <i class="far fa-star star-icon hollow-star"></i>
-                        <span class="rating-text">36 Rating</span>
-                      </p>
-                      
-                    <p class="price">$10</p>
+                    <p class="price">$15</p>
                 </li>
             </ul>
         </section>
