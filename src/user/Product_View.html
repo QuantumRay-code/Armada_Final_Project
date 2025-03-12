@@ -28,7 +28,7 @@
                     <li>
                         <a href="/logout">
                             <span>Logout</span>
-                            <img src="Product_View_Assets/logout-icon.png" alt="Logout Icon" class="logout-icon">
+                            <img src="Product_View_Assets/logout_icn.png" alt="Logout Icon" class="logout-icon">
                         </a>
                     </li>
                 </menu>
@@ -40,14 +40,13 @@
                 <input type="text" placeholder="Search Products">
                 <i class="fas fa-search"></i>
             </form>
-            <button class="cart-button">Cart (0)</button>
+            <button class="cart-button" onclick="window.location.href='/cart'">Cart (0)</button>
         </section>
 
         <section class="product-header">
         <a href="/products" class="back-link">
-            <span class="back-icon">◀</span>
-            <h2>All Products (36)</h2>
-        </a>
+            <span class="back-icon">
+                <i class="fas fa-chevron-left"></i></span><h2>All Products <span class="product-count">(36)</span></h2></a>
         </section>
 
         <section class="product-info">
@@ -62,8 +61,15 @@
             </section>
 
             <section class="product-details">
-                <h2>Vegetables</h2>
-                <p class="rating">⭐⭐⭐⭐ <span class="rating num">36 Rating</span></p>
+                <h2>Burger</h2>
+                <p>
+                    <i class="fas fa-star star-icon"></i>
+                    <i class="fas fa-star star-icon"></i>
+                    <i class="fas fa-star star-icon"></i>
+                    <i class="fas fa-star star-icon"></i>
+                    <i class="far fa-star star-icon hollow-star"></i>
+                    <span class="rating num">36 Rating</span>
+                  </p>
                 <button class="price-button">$10</button>
                 <p class="description">
                     Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. 
@@ -93,6 +99,15 @@
                     </div>
                 
                     <button class="add-to-cart"> Add to Cart</button>
+                    <section id="cart-modal" class="modal" aria-hidden="true" role="dialog">
+                        <div class="modal-content">
+                            <img src="Product_View_Assets/modal_check.png" alt="Success" class="check-icon">
+                            <p>Added to cart successfully!</p>
+                            <button class="close-btn" aria-label="Close">&times;</button>
+                        </div>
+                    </section>
+
+                    <div id="modal-backdrop" class="modal-backdrop"></div>
                 </section>
             </section>
         </section>
@@ -103,31 +118,67 @@
                 <li>
                     <img src="Product_View_Assets/salad.png" alt="Similar Item">
                     <p>Vegetables</p>
-                    <p>⭐⭐⭐⭐ 36 Rating</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
                     <p class="price">$10</p>
                 </li>
                 <li>
                     <img src="Product_View_Assets/juice.png" alt="Similar Item">
                     <p>Vegetables</p>
-                    <p>⭐⭐⭐⭐ 36 Rating</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
                     <p class="price">$10</p>
                 </li>
                 <li>
                     <img src="Product_View_Assets/combo.png" alt="Similar Item">
                     <p>Vegetables</p>
-                    <p>⭐⭐⭐⭐ 36 Rating</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
                     <p class="price">$10</p>
                 </li>
                 <li>
                     <img src="Product_View_Assets/pasta.png" alt="Similar Item">
                     <p>Vegetables</p>
-                    <p>⭐⭐⭐⭐ 36 Rating</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
                     <p class="price">$10</p>
                 </li>
                 <li>
                     <img src="Product_View_Assets/lunch.png" alt="Similar Item">
                     <p>Vegetables</p>
-                    <p>⭐⭐⭐⭐ 36 Rating</p>
+                    <p>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="fas fa-star star-icon"></i>
+                        <i class="far fa-star star-icon hollow-star"></i>
+                        <span class="rating-text">36 Rating</span>
+                      </p>
+                      
                     <p class="price">$10</p>
                 </li>
             </ul>
