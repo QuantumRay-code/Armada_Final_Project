@@ -18,12 +18,12 @@
 
 <body>
     <aside>
-        <img src="/assets/logo.svg" alt="Logo">
+        <img id="logoutBtn" src="/assets/logo.svg" alt="Logo">
         <a href=""><img src="/assets/dashboard_icon.svg" alt="Dashboard Icon"></a>
     </aside>
     <main>
         <header>
-            <ul class="list-unstyled">
+            <ul id="headerContainer" class="list-unstyled">
                 <li>
                     <h6><img src="/assets/header_icon.svg" alt="Header Icon"> Let’s order fresh items for you.</h6>
 
@@ -33,12 +33,11 @@
                     </a>
                     <img class="logo" src="/assets/logo.svg" alt="Logo">
                 </li>
-                <li>
+                <li id="authContainer">
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#signupModal">Signup</button>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#loginModal">Login</button>
-
                 </li>
             </ul>
         </header>
@@ -140,7 +139,8 @@
                                 <h6>
                                     <i class="fa-regular fa-face-smile"></i> Login to order
                                 </h6>
-                                <a href="">New Member? Register here.</a>
+                                <a class="btn btn-link" data-bs-target="#signupModal" data-bs-toggle="modal">New Member? Register here.</a>
+
                             </div>
                             <div class="col-12 mt-2 mb-5">
                                 <div class="mb-3">
@@ -157,7 +157,7 @@
                                 </div>
                             </div>
                             <div class="col-12 mt-4">
-                                <button class="w-100">Signup</button>
+                                <button id="loginBtn" class="w-100">Login</button>
                             </div>
                         </div>
                     </div>
@@ -185,7 +185,6 @@
                                 <h6>
                                     <i class="fa-regular fa-face-smile"></i> Signup to order
                                 </h6>
-                                <a href="">New Member? Register here.</a>
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
@@ -210,11 +209,12 @@
                                 <div class="mb-3">
                                     <label for="password" class="form-label">Password
                                     </label>
-                                    <input type="email" class="form-control" id="password" placeholder="Password">
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
                                 </div>
                             </div>
                             <div class="col-12 mt-4">
-                                <button class="w-100">Signup</button>
+                                <button id="signupBtn" class="w-100">Signup</button>
+                                <p class="mt-2">Already have an account?<a class="btn btn-link" data-bs-target="#loginModal" data-bs-toggle="modal">Login</a></p>
                             </div>
                         </div>
                     </div>

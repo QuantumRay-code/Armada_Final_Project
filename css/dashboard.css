@@ -148,6 +148,7 @@ header button:nth-child(2):hover {
     margin: 0;
     overflow-y: auto;
     max-height: 76vh;
+    scrollbar-width: none   ;
 
 }
 
@@ -221,6 +222,11 @@ header button:nth-child(2):hover {
 .product_img {
     width: 100%;
     border-radius: 20px 20px 0px 0px;
+    height: 14rem;
+}
+.products li:hover{
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.02);
 }
 
 .product_wrapper {
