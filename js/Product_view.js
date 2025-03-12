@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     const addToCartButton = document.querySelector(".add-to-cart");
     const modal = document.getElementById("cart-modal");
     const modalBackdrop = document.getElementById("modal-backdrop");
