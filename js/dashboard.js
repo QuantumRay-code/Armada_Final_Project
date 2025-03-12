@@ -1,3 +1,68 @@
+let users = [{ firstName: 'John', lastName: "Doe", email: "John@gmail.com", password: 'John123.', isLogin: false }];
+let signupBtn = document.getElementById('signupBtn');
+let loginBtn = document.getElementById('loginBtn');
+let logoutBtn = document.getElementById('logoutBtn');
+
+// SIGNUP FUNCTION
+signupBtn.addEventListener('click', function () {
+    let first_name = document.getElementById('first_name').value;
+    let last_name = document.getElementById('last_name').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+
+    if (first_name && last_name && email && password) {
+        users.push({ firstName: first_name, lastName: last_name, email: email, password: password, isLogin: false });
+        console.log("User signed up:", users);
+        //Close Moodal
+        let signupModal = document.getElementById('signupModal');
+        let modalInstance = bootstrap.Modal.getInstance(signupModal);
+        modalInstance.hide();
+    } else {
+        alert("Please fill in all fields.");
+    }
+});
+
+// LOGIN FUNCTION
+loginBtn.addEventListener('click', function () {
+    let email_login = document.getElementById('email_login').value;
+    let password_login = document.getElementById('password_login').value;
+    let authContainer = document.getElementById('authContainer');
+    let currentUser = users.find(user => user.email === email_login && user.password === password_login);
+    let headerContainer = document.getElementById('headerContainer');
+    if (currentUser) {
+        currentUser.isLogin = true;
+
+        //Add the Profile
+        if (currentUser.isLogin) {
+            authContainer.style.display = "none";
+            let li = document.createElement('li');
+            li.innerHTML = `<h5>${currentUser.firstName}</h5>`;
+            li.id = "profileContainer";
+            headerContainer.appendChild(li);
+        }
+
+        //Close Moodal
+        let signupModal = document.getElementById('loginModal');
+        let modalInstance = bootstrap.Modal.getInstance(signupModal);
+        modalInstance.hide();
+        console.log(`Hello, ${currentUser.firstName} ${currentUser.lastName} ${currentUser.isLogin}!`);
+        console.log("User Logged In:", currentUser)
+    } else {
+        alert('Incorrect email or password');
+    }
+});
+
+logoutBtn.addEventListener('click', function () {
+    let authContainer = document.getElementById('authContainer');
+    let profileContainer = document.getElementById('profileContainer');
+    authContainer.style.display = "inline";
+    if (profileContainer) {
+        profileContainer.style.display = "none";
+        users.isLogin = false;
+    }
+    console.log("User logged out successfully.");
+    console.log("User Logged out:", users)
+})
 let products = [
     {
         name: "Burgir",
