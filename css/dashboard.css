@@ -78,6 +78,7 @@ header button:nth-child(2) {
 
 header button:nth-child(1):hover {
     background-color: rgb(245, 245, 245);
+    color: #8874eb;
 }
 
 header button:nth-child(2):hover {
@@ -150,12 +151,9 @@ header button:nth-child(2):hover {
 
 }
 
-
 .categories ul li {
+    
     list-style: none;
-}
-
-.categories ul li a {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -170,10 +168,15 @@ header button:nth-child(2):hover {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     margin: 0.6rem 0rem;
     width: 120px;
+    height: 130px;
 }
 
-.categories ul li a:hover {
+.categories ul li:hover {
     background-color: #f9f8ff;
+}
+.categories ul li img{
+    height: auto;
+    max-width: 70%;
 }
 
 .products {
@@ -217,6 +220,7 @@ header button:nth-child(2):hover {
 
 .product_img {
     width: 100%;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .product_wrapper {
@@ -224,13 +228,18 @@ header button:nth-child(2):hover {
     justify-content: center;
     padding: 0.6rem 1.3rem;
 }
-.product_info{
+.product_info {
     width: 80%;
-    line-height: 4px;
     text-align: start;
     color: #7D7D7D;
     font-size: 12px;
 }
+.product_info h6,
+.product_info p {
+    margin: 0;
+    padding: 0;
+}
+
 .product_info i{
     color: #FFC93F;
 }
@@ -255,7 +264,17 @@ header button:nth-child(2):hover {
 .logo{
     display: none;
 }
-
+.modalLogin img{
+    width: 50px;
+}
+.modalLogin button{
+    padding: 0.5rem 1rem;
+    background-color: #8874eb;
+    color: white;
+    border: 1px solid #9C89FF;
+    border-radius: 5px;
+    width: 120px;
+}
 
 @media (max-width: 1024px) {
     .sub_main {
