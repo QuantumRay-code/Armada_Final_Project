@@ -78,6 +78,7 @@ header button:nth-child(2) {
 
 header button:nth-child(1):hover {
     background-color: rgb(245, 245, 245);
+    color: #8874eb;
 }
 
 header button:nth-child(2):hover {
@@ -150,12 +151,9 @@ header button:nth-child(2):hover {
 
 }
 
-
 .categories ul li {
+    
     list-style: none;
-}
-
-.categories ul li a {
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -173,10 +171,10 @@ header button:nth-child(2):hover {
     height: 130px;
 }
 
-.categories ul li a:hover {
+.categories ul li:hover {
     background-color: #f9f8ff;
 }
-.categories ul li a img{
+.categories ul li img{
     height: auto;
     max-width: 70%;
 }
@@ -266,7 +264,17 @@ header button:nth-child(2):hover {
 .logo{
     display: none;
 }
-
+.modalLogin img{
+    width: 50px;
+}
+.modalLogin button{
+    padding: 0.5rem 1rem;
+    background-color: #8874eb;
+    color: white;
+    border: 1px solid #9C89FF;
+    border-radius: 5px;
+    width: 120px;
+}
 
 @media (max-width: 1024px) {
     .sub_main {

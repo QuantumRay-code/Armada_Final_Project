@@ -26,15 +26,19 @@
             <ul class="list-unstyled">
                 <li>
                     <h6><img src="/assets/header_icon.svg" alt="Header Icon"> Let’s order fresh items for you.</h6>
-                   
-                    <a id="bar_icon" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+
+                    <a id="bar_icon" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                        aria-controls="offcanvasExample">
                         <i class="fa-solid fa-bars"></i>
                     </a>
                     <img class="logo" src="/assets/logo.svg" alt="Logo">
                 </li>
                 <li>
-                    <button>Signup</button>
-                    <button>Login</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#signupModal">Signup</button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">Login</button>
+
                 </li>
             </ul>
         </header>
@@ -50,53 +54,58 @@
                 <div class="categories">
                     <h6>Cateogries</h6>
                     <ul>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/allproducts.png" class="img-fuid" alt="All Products">
-                                <p>All Products</p>
-                            </a>
+                        <li class="categoryBtn">
+
+                            <img src="/assets/categories/allproducts.png" data-category="All" class="img-fuid"
+                                alt="All Products">
+                            <p>All Products</p>
+
                         </li>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/fruits.png" class="img-fuid" alt="All Products">
-                                <p>Fruits</p>
-                            </a>
+                        <li class="categoryBtn">
+
+                            <img src="/assets/categories/fruits.png" data-category="Fruits" class="img-fuid"
+                                alt="All Products">
+                            <p>Fruits</p>
+
                         </li>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/vegetable.png" class="img-fuid" alt="All Products">
-                                <p>Vegetables</p>
-                            </a>
+                        <li class="categoryBtn">
+
+                            <img src="/assets/categories/vegetable.png" data-category="Vegetable" class="img-fuid"
+                                alt="All Products">
+                            <p>Vegetables</p>
+
                         </li>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/crops.png" class="img-fuid" alt="All Products">
-                                <p>Crops</p>
-                            </a>
+                        <li class="categoryBtn">
+                            <img src="/assets/categories/crops.png" data-category="Crops" class="img-fuid"
+                                alt="All Products">
+                            <p>Crops</p>
+
                         </li>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/poultry.png" class="img-fuid" alt="All Products">
-                                <p>Poultry</p>
-                            </a>
+                        <li class="categoryBtn">
+
+                            <img src="/assets/categories/poultry.png" data-category="Poultry" class="img-fuid"
+                                alt="All Products">
+                            <p>Poultry</p>
+
                         </li>
-                        <li>
-                            <a href="">
-                                <img src="/assets/categories/livestocks.png" class="img-fuid" alt="All Products">
-                                <p>livestocks</p>
-                            </a>
+                        <li class="categoryBtn">
+
+                            <img src="/assets/categories/livestocks.png" data-category="Livestocks" class="img-fuid"
+                                alt="All Products">
+                            <p>livestocks</p>
+
                         </li>
                     </ul>
                 </div>
                 <div class="products">
                     <h6>All Products (36)</h6>
-                    <ul>
+                    <ul id="product_list">
                         <li>
                             <a href="">
-                                <img class="product_img" src="/assets/products/crops/1.png" alt="Product 1">
+                                <img class="product_img" src="/assets/products/fruits/1.png" alt="Product 1">
                                 <div class="product_wrapper">
                                     <div class="product_info">
-                                        <h6>Vegetables</h6>
+                                        <h6 class="product_name">Fruit</h6>
                                         <p>
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
@@ -104,48 +113,124 @@
                                             <i class="fa-solid fa-star"></i>
                                             <i class="fa-solid fa-star"></i>
                                         </p>
-                                        <p>36 Ratings</p>
+                                        <p>32 Ratings</p>
                                     </div>
                                     <div class="product_price">
-                                        <p>$10</p>
+                                        <p>$100</p>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a href="">
-                                <img class="product_img" src="/assets/products/crops/1.png" alt="Product 1">
-                                <div class="product_wrapper">
-                                    <div class="product_info">
-                                        <h6>Vegetables</h6>
-                                        <p>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </p>
-                                        <p>36 Ratings</p>
-                                    </div>
-                                    <div class="product_price">
-                                        <p>$10</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        
-
-
                     </ul>
                 </div>
             </section>
         </section>
     </main>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <div class="row">
+                    <div class="col-9 p-5">
+                        <div class="modalLogin row">
+                            <img src="/assets/logo.svg" alt="Logo">
+                            <div class="col-12 d-flex justify-content-between my-4">
+                                <h6>
+                                    <i class="fa-regular fa-face-smile"></i> Login to order
+                                </h6>
+                                <a href="">New Member? Register here.</a>
+                            </div>
+                            <div class="col-12 mt-2 mb-5">
+                                <div class="mb-3">
+                                    <label for="email_login" class="form-label">Email
+                                    </label>
+                                    <input type="email" class="form-control" id="email_login"
+                                        placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password_login" class="form-label">Password
+                                    </label>
+                                    <input type="email" class="form-control" id="password_login"
+                                        placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button class="w-100">Signup</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <img src="/assets/login_image.png" alt="Login Background Image" class="img-fluid w-100 h-100"
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog  modal-lg modal-dialog-centered">
+            <div class="modal-content position-relative">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-2" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+                <div class="row">
+                    <div class="col-9 p-5">
+                        <div class="modalLogin row">
+                            <img src="/assets/logo.svg" alt="Logo">
+                            <div class="col-12 d-flex justify-content-between my-4">
+                                <h6>
+                                    <i class="fa-regular fa-face-smile"></i> Signup to order
+                                </h6>
+                                <a href="">New Member? Register here.</a>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="first_name" class="form-label">First Name
+                                    </label>
+                                    <input type="text" class="form-control" id="first_name" placeholder="First Name">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <label for="last_name" class="form-label">Last Name
+                                    </label>
+                                    <input type="text" class="form-control" id="last_name" placeholder="Last Name">
+                                </div>
+                            </div>
+                            <div class="col-12 mb-5">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email
+                                    </label>
+                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password
+                                    </label>
+                                    <input type="email" class="form-control" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button class="w-100">Signup</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <img src="/assets/login_image.png" alt="Login Background Image" class="img-fluid w-100 h-100"
+                            style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 80px;">
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel"
+        style="width: 80px;">
         <div class="offcanvas-header">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -155,6 +240,7 @@
             </div>
         </div>
     </div>
+  
 </body>
 
 </html>
