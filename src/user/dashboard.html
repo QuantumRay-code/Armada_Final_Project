@@ -18,7 +18,7 @@
 
 <body>
     <aside>
-        <img id="logoutBtn" src="/assets/logo.svg" alt="Logo">
+        <img src="/assets/logo.svg" alt="Logo">
         <a href="/src/user/dashboard.html"><img src="/assets/dashboard_icon.svg" alt="Dashboard Icon"></a>
     </aside>
     <main>
@@ -44,8 +44,8 @@
         <section class="sub_main">
             <section class="search_section">
                 <form>
-                    <input type="text" class="form-control" name="search" placeholder="Search">
-                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" id="searchInput" class="form-control" name="search" placeholder="Search">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
                 <button class="cart_btn"><i class="fa-solid fa-cart-shopping"></i> Cart (0)</button>
             </section>
@@ -139,20 +139,20 @@
                                 <h6>
                                     <i class="fa-regular fa-face-smile"></i> Login to order
                                 </h6>
-                                <a class="btn btn-link" data-bs-target="#signupModal" data-bs-toggle="modal">New Member? Register here.</a>
+                                <a class="btn btn-link" data-bs-target="#signupModal" data-bs-toggle="modal">New Member?
+                                    Register here.</a>
 
                             </div>
                             <div class="col-12 mt-2 mb-5">
                                 <div class="mb-3">
                                     <label for="email_login" class="form-label">Email
                                     </label>
-                                    <input type="email" class="form-control" id="email_login"
-                                        placeholder="Email">
+                                    <input type="email" class="form-control" id="email_login" placeholder="Email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="password_login" class="form-label">Password
                                     </label>
-                                    <input type="email" class="form-control" id="password_login"
+                                    <input type="password" class="form-control" id="password_login"
                                         placeholder="Password">
                                 </div>
                             </div>
@@ -214,7 +214,8 @@
                             </div>
                             <div class="col-12 mt-4">
                                 <button id="signupBtn" class="w-100">Signup</button>
-                                <p class="mt-2">Already have an account?<a class="btn btn-link" data-bs-target="#loginModal" data-bs-toggle="modal">Login</a></p>
+                                <p class="mt-2">Already have an account?<a class="btn btn-link"
+                                        data-bs-target="#loginModal" data-bs-toggle="modal">Login</a></p>
                             </div>
                         </div>
                     </div>
