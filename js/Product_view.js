@@ -214,8 +214,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     displayProduct(products);
 
-    
-
+    // SEARCH FUNCTIONALITY
+    let searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function () {
+            let searchValue = this.value.toLowerCase();
+            let filteredProducts = products.filter(product =>
+                product.name.toLowerCase().includes(searchValue)
+            );
+            displayProduct(filteredProducts);
+        });
+    }
 });
 let selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
 console.log(selectedProduct)
