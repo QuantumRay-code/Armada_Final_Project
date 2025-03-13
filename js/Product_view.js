@@ -225,6 +225,35 @@ document.addEventListener("DOMContentLoaded", function () {
             displayProduct(filteredProducts);
         });
     }
+
+    // ADD TO CART FUNCTIONALITY
+    addToCartBtn.addEventListener('click', function () {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+        let users = JSON.parse(localStorage.getItem("users"));
+        let currentUser = users.find(user => user.isLogin);
+        if (currentUser) {
+            cart.push(
+                {
+                    email:currentUser.email,
+                    name: selectedProduct.name,
+                    quantity: selectedProduct.quantity,
+                    category: selectedProduct.category,
+                    ratings: selectedProduct.ratings,
+                    price: selectedProduct.price,
+                    description: selectedProduct.description,
+                    image: selectedProduct.image,
+                    stock: selectedProduct.stock,
+                    unit: selectedProduct.unit,
+                    totalAmount: selectedProduct.price * quantityInput.value,
+                }
+            )
+            localStorage.setItem("cart", JSON.stringify(cart));
+            console.log(JSON.parse(localStorage.getItem("cart")))
+        }
+
+    });
+
+
 });
 let selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
 console.log(selectedProduct)

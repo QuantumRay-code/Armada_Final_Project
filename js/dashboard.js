@@ -114,7 +114,7 @@ signupBtn.addEventListener('click', function () {
 let products = [
     {
         name: "Mango",
-        quantity: 34,
+        quantity: 0,
         category: "Fruits",
         ratings: 5,
         price: 50,
@@ -125,7 +125,7 @@ let products = [
     },
     {
         name: "Strawberry",
-        quantity: 53,
+        quantity: 0,
         category: "Fruits",
         ratings: 4,
         price: 45,
@@ -136,7 +136,7 @@ let products = [
     },
     {
         name: "Rambutan",
-        quantity: 45,
+        quantity: 0,
         category: "Fruits",
         ratings: 3,
         price: 45,
@@ -147,7 +147,7 @@ let products = [
     },
     {
         name: "Carrots",
-        quantity: 34,
+        quantity: 0,
         category: "Vegetable",
         ratings: 5,
         price: 50,
@@ -158,7 +158,7 @@ let products = [
     },
     {
         name: "Eggplant",
-        quantity: 34,
+        quantity: 0,
         category: "Vegetable",
         ratings: 5,
         price: 23,
@@ -169,7 +169,7 @@ let products = [
     },
     {
         name: "Beans",
-        quantity: 23,
+        quantity: 0,
         category: "Vegetable",
         ratings: 1,
         price: 34,
@@ -180,7 +180,7 @@ let products = [
     },
     {
         name: "Green Onion",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 3,
         price: 34,
@@ -191,7 +191,7 @@ let products = [
     },
     {
         name: "Rice",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 4,
         price: 34,
@@ -202,7 +202,7 @@ let products = [
     },
     {
         name: "Mung Bean",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 5,
         price: 34,
@@ -213,7 +213,7 @@ let products = [
     },
     {
         name: "Chicken Meat",
-        quantity: 23,
+        quantity: 0,
         category: "Poultry",
         ratings: 5,
         price: 76,
@@ -224,7 +224,7 @@ let products = [
     },
     {
         name: "Salted Egg",
-        quantity: 23,
+        quantity: 0,
         category: "Poultry",
         ratings: 5,
         price: 54,
@@ -235,7 +235,7 @@ let products = [
     },
     {
         name: "Fresh Milk",
-        quantity: 76,
+        quantity: 0,
         category: "Poultry",
         ratings: 4,
         price: 42,
@@ -246,7 +246,7 @@ let products = [
     },
     {
         name: "Pig",
-        quantity: 34,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 42,
@@ -257,7 +257,7 @@ let products = [
     },
     {
         name: "Geese",
-        quantity: 43,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 74,
@@ -268,7 +268,7 @@ let products = [
     },
     {
         name: "Rabbit",
-        quantity: 23,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 42,
