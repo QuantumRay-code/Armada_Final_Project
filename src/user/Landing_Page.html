@@ -12,40 +12,37 @@
         <img src="/assets/img/shape.png" alt="" id="background-shape" />
 
         <header>
-          <div class="container">
-            <div id="brand">
-              <img src="/assets/img/logo.png" alt="Logo" id="brand-logo" />
-              <h3 id="brand-title">Agri-Stock</h3>
-            </div>
-            <nav>
-              <ul id="nav-links">
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#" class="btn">Sign up</a></li>
-              </ul>
-            </nav>
-          </div>
+          <a href="#" id="brand">
+            <img src="/assets/img/logo.png" alt="Agri-Stock Logo" id="brand-logo">
+            <h1>Agri-Stock</h1>
+          </a>
+          <nav>
+            <ul id="nav-links">
+              <li><a href="#" data-section="get-started">Get Started</a></li>
+              <li><a href="#" data-section="about-us">About us</a></li>
+              <li><a href="#" data-section="contact-us">Contact us</a></li>
+            </ul>
+          </nav>
         </header>
 
         <section id="hero-content">
           <div class="container">
             <div class="hero-text">
-              <h1>Start</h1>
-              <h1>Shopping Now</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Delectus eius distinctio odit, magni magnam qui ex perferendis
-                vitae!
+              <h1 id="hero-title">About us</h1>
+              <p id="hero-description">
+                At Agri-Stock, we strive to bring fresh agricultural products directly to your doorstep. 
+                Our platform connects farmers with consumers, ensuring high-quality produce at the best prices. 
+                We are committed to sustainability, efficiency, and creating a seamless shopping experience for everyone.
               </p>
               <a href="/src/user/dashboard.html" class="btn">Shop Now!</a>
             </div>
             <div class="hero-image">
-              <img src="/assets/monke.png" alt="Person Image" id="hero-img" />
+              <img src="/assets/monke.png" alt="Person Image" id="hero-img">
             </div>
           </div>
         </section>
       </section>
     </main>
+    <script src="/js/landing.js"></script>
   </body>
 </html>
