@@ -1,7 +1,95 @@
-let users = [{ firstName: 'John', lastName: "Doe", email: "John@gmail.com", password: 'John123.', isLogin: false }];
+// DISPLAY OBJECT USERS
+let storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+console.log(storedUsers);
+
 let signupBtn = document.getElementById('signupBtn');
 let loginBtn = document.getElementById('loginBtn');
 let logoutBtn = document.getElementById('logoutBtn');
+let productContainer = document.getElementById('product_list');
+
+// CHECK THE CURRENT USER
+document.addEventListener("DOMContentLoaded", function () {
+    let authContainer = document.getElementById('authContainer');
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.isLogin);
+
+    // IF USER ISLOGIN TRUE
+    if (currentUser) {
+        authContainer.style.display = "none";
+        showUserProfile(currentUser);
+    }
+
+    // IF USER ISLOGIN FALSE
+    document.addEventListener("click", function (event) {
+        if (event.target.id === "logoutBtn") {
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+            let currentUser = users.find(user => user.isLogin);
+            if (currentUser) {
+                currentUser.isLogin = false;
+                localStorage.setItem("users", JSON.stringify(users));
+            }
+            let profileContainer = document.getElementById('profileContainer');
+            if (profileContainer) {
+                profileContainer.remove();
+            }
+            authContainer.style.display = "inline";
+        }
+    });
+});
+
+// SHOW PROFILE FUNCTION
+function showUserProfile(user) {
+    let headerContainer = document.getElementById('headerContainer');
+    let profileContainer = document.createElement('li');
+    profileContainer.id = "profileContainer";
+    profileContainer.innerHTML = `
+        <div class="dropdown">
+            <a class="btn btn-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                ${user.firstName}
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" id="logoutBtn" href="#">Logout</a></li>
+            </ul>
+        </div>`;
+    headerContainer.appendChild(profileContainer);
+}
+
+// LOGIN FUNCTION
+loginBtn.addEventListener('click', function () {
+    let email_login = document.getElementById('email_login').value;
+    let password_login = document.getElementById('password_login').value;
+    let authContainer = document.getElementById('authContainer');
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = users.find(user => user.email === email_login && user.password === password_login);
+    let headerContainer = document.getElementById('headerContainer');
+    if (currentUser) {
+        currentUser.isLogin = true;
+        localStorage.setItem("users", JSON.stringify(users));
+        //Add the Profile
+        if (currentUser.isLogin) {
+            authContainer.style.display = "none";
+            let li = document.createElement('li');
+            li.innerHTML = `<div class="dropdown">
+                        <a class="btn btn-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            ${currentUser.firstName}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" id="logoutBtn" href="#">Logout</a></li>
+                        </ul>
+                    </div>`;
+            li.id = "profileContainer";
+            headerContainer.appendChild(li);
+        }
+        //Close Moodal
+        let signupModal = document.getElementById('loginModal');
+        let modalInstance = bootstrap.Modal.getInstance(signupModal);
+        modalInstance.hide();
+    } else {
+        alert('Incorrect email or password');
+    }
+});
 
 // SIGNUP FUNCTION
 signupBtn.addEventListener('click', function () {
@@ -11,9 +99,9 @@ signupBtn.addEventListener('click', function () {
     let password = document.getElementById('password').value;
 
     if (first_name && last_name && email && password) {
+        let users = JSON.parse(localStorage.getItem("users")) || [];
         users.push({ firstName: first_name, lastName: last_name, email: email, password: password, isLogin: false });
-        console.log("User signed up:", users);
-        //Close Moodal
+        localStorage.setItem("users", JSON.stringify(users));
         let signupModal = document.getElementById('signupModal');
         let modalInstance = bootstrap.Modal.getInstance(signupModal);
         modalInstance.hide();
@@ -22,62 +110,11 @@ signupBtn.addEventListener('click', function () {
     }
 });
 
-// LOGIN FUNCTION
-loginBtn.addEventListener('click', function () {
-    let email_login = document.getElementById('email_login').value;
-    let password_login = document.getElementById('password_login').value;
-    let authContainer = document.getElementById('authContainer');
-    let currentUser = users.find(user => user.email === email_login && user.password === password_login);
-    let headerContainer = document.getElementById('headerContainer');
-    if (currentUser) {
-        currentUser.isLogin = true;
-
-        //Add the Profile
-        if (currentUser.isLogin) {
-            authContainer.style.display = "none";
-            let li = document.createElement('li');
-            li.innerHTML = `<h5>${currentUser.firstName}</h5>`;
-            li.id = "profileContainer";
-            headerContainer.appendChild(li);
-        }
-
-        //Close Moodal
-        let signupModal = document.getElementById('loginModal');
-        let modalInstance = bootstrap.Modal.getInstance(signupModal);
-        modalInstance.hide();
-        console.log(`Hello, ${currentUser.firstName} ${currentUser.lastName} ${currentUser.isLogin}!`);
-        console.log("User Logged In:", currentUser)
-    } else {
-        alert('Incorrect email or password');
-    }
-});
-
-logoutBtn.addEventListener('click', function () {
-    let authContainer = document.getElementById('authContainer');
-    let profileContainer = document.getElementById('profileContainer');
-    authContainer.style.display = "inline";
-    if (profileContainer) {
-        profileContainer.style.display = "none";
-        users.isLogin = false;
-    }
-    console.log("User logged out successfully.");
-    console.log("User Logged out:", users)
-})
+// PRODUCTS
 let products = [
     {
-        name: "Burgir",
-        quantity: 34,
-        category: "All",
-        ratings: 5,
-        price: 50,
-        unit: "kg",
-        stock: 45,
-        description: "Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. Pretium orci venenatis habitasse gravida nulla tincidunt iaculis. Aliquet at massa quisque libero viverra ut sed. Est vulputate est rutrum nunc nunc pellentesque ultrices pharetra. Mauris euismod sed vel quisque tincidunt suspendisse sed turpis volutpat.",
-        image: "/assets/PV assets/burgir.png"
-    },
-    {
         name: "Mango",
-        quantity: 34,
+        quantity: 0,
         category: "Fruits",
         ratings: 5,
         price: 50,
@@ -88,7 +125,7 @@ let products = [
     },
     {
         name: "Strawberry",
-        quantity: 53,
+        quantity: 0,
         category: "Fruits",
         ratings: 4,
         price: 45,
@@ -99,7 +136,7 @@ let products = [
     },
     {
         name: "Rambutan",
-        quantity: 45,
+        quantity: 0,
         category: "Fruits",
         ratings: 3,
         price: 45,
@@ -109,8 +146,8 @@ let products = [
         image: "/assets/products/fruits/3.png"
     },
     {
-        name: "Carots",
-        quantity: 34,
+        name: "Carrots",
+        quantity: 0,
         category: "Vegetable",
         ratings: 5,
         price: 50,
@@ -120,11 +157,11 @@ let products = [
         image: "/assets/products/vegetables/1.png"
     },
     {
-        name: "Talong Ni Juswa",
-        quantity: 34,
+        name: "Eggplant",
+        quantity: 0,
         category: "Vegetable",
-        ratings: 10,
-        price: 10000,
+        ratings: 5,
+        price: 23,
         unit: "kg",
         stock: 100,
         description: "Lorem ipsum dolor sit amet consectetur. Eget sit posuere enim facilisi. Pretium orci venenatis habitasse gravida nulla tincidunt iaculis. Aliquet at massa quisque libero viverra ut sed. Est vulputate est rutrum nunc nunc pellentesque ultrices pharetra. Mauris euismod sed vel quisque tincidunt suspendisse sed turpis volutpat.",
@@ -132,7 +169,7 @@ let products = [
     },
     {
         name: "Beans",
-        quantity: 23,
+        quantity: 0,
         category: "Vegetable",
         ratings: 1,
         price: 34,
@@ -143,7 +180,7 @@ let products = [
     },
     {
         name: "Green Onion",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 3,
         price: 34,
@@ -154,7 +191,7 @@ let products = [
     },
     {
         name: "Rice",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 4,
         price: 34,
@@ -165,7 +202,7 @@ let products = [
     },
     {
         name: "Mung Bean",
-        quantity: 23,
+        quantity: 0,
         category: "Crops",
         ratings: 5,
         price: 34,
@@ -176,7 +213,7 @@ let products = [
     },
     {
         name: "Chicken Meat",
-        quantity: 23,
+        quantity: 0,
         category: "Poultry",
         ratings: 5,
         price: 76,
@@ -187,7 +224,7 @@ let products = [
     },
     {
         name: "Salted Egg",
-        quantity: 23,
+        quantity: 0,
         category: "Poultry",
         ratings: 5,
         price: 54,
@@ -198,7 +235,7 @@ let products = [
     },
     {
         name: "Fresh Milk",
-        quantity: 76,
+        quantity: 0,
         category: "Poultry",
         ratings: 4,
         price: 42,
@@ -209,7 +246,7 @@ let products = [
     },
     {
         name: "Pig",
-        quantity: 34,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 42,
@@ -220,7 +257,7 @@ let products = [
     },
     {
         name: "Geese",
-        quantity: 43,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 74,
@@ -231,7 +268,7 @@ let products = [
     },
     {
         name: "Rabbit",
-        quantity: 23,
+        quantity: 0,
         category: "Livestocks",
         ratings: 4,
         price: 42,
@@ -243,7 +280,11 @@ let products = [
 
 ];
 
-let productContainer = document.getElementById('product_list');
+localStorage.setItem("products", JSON.stringify(products));
+let storedProducts = JSON.parse(localStorage.getItem("products")) || [];
+console.log(storedProducts);
+
+// DISPLAY ALL PRODUCTS
 function displayProduct(filteredProducts) {
     let productContainer = document.getElementById('product_list');
     productContainer.innerHTML = '';
@@ -251,7 +292,7 @@ function displayProduct(filteredProducts) {
     filteredProducts.forEach(product => {
         let li = document.createElement('li');
         li.innerHTML = `
-            <a href="Product_View.html">
+            <a href="Product_View.html" class="product-link" data-product='${JSON.stringify(product)}'>
                 <img class="product_img" src="${product.image}" alt="${product.name}">
                 <div class="product_wrapper">
                     <div class="product_info">
@@ -267,6 +308,12 @@ function displayProduct(filteredProducts) {
                 </div>
             </a>
         `;
+        li.querySelector('.product-link').addEventListener('click', function (event) {
+            event.preventDefault();
+            localStorage.setItem('selectedProduct', JSON.stringify(product));
+            window.location.href = "Product_View.html";
+        });
+
         productContainer.appendChild(li);
     });
 }
@@ -285,3 +332,17 @@ document.querySelectorAll('.categoryBtn').forEach(button => {
         }
     });
 });
+
+// SEARCH FUNCTIONALITY
+let searchInput = document.getElementById('searchInput');
+if (searchInput) {
+    searchInput.addEventListener('input', function () {
+        let searchValue = this.value.toLowerCase();
+        let filteredProducts = products.filter(product =>
+            product.name.toLowerCase().includes(searchValue)
+        );
+        displayProduct(filteredProducts);
+    });
+}
+
+console.log(JSON.parse(localStorage.getItem("selectedProduct")));
