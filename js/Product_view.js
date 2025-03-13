@@ -248,10 +248,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             )
             localStorage.setItem("cart", JSON.stringify(cart));
-            console.log(JSON.parse(localStorage.getItem("cart")))
+            
+            window.location.href = "cart.html";
         }
 
     });
+
+    // DISPLAY PRODUCT COUNT INSIDE THE CART
+    let cart = JSON.parse(localStorage.getItem("cart"));
+    let cartBtn = document.getElementById('cartbtn')
+    cartBtn.innerText=` Cart (${cart.length})`
 
 
 });
